@@ -1,0 +1,264 @@
+// Import variables
+@import '_variables'
+
+// Body / General Styles
+*
+    box-sizing border-box
+    -moz-box-sizing border-box
+    -webkit-box-sizing border-box
+
+// Import fonts
+// Put Gibson font here
+
+html
+    height 100%
+    margin 0
+
+body
+    background cWhite
+    color cBlack
+    font-family "Gibson", "Helvetica", sans-serif
+    font-size 100%
+    font-weight 300 // Light
+    height 100%
+    margin 0
+
+// Headings
+h1,h2,h3,h4,h5,h6,a,a:active
+    color cBlack
+    font-size 32px
+    font-weight 600 // Bold
+    margin 0
+
+// Paragraphs, spans, etc.
+p
+    font-size 18px
+    line-height 30px
+    margin 10px 0 0
+
+    strong
+        font-weight: 400
+
+    span
+        font-size: 16px
+
+a,a:visited
+    display inline-block
+    text-decoration none
+
+    &.rsvp
+        cursor: pointer
+
+        p
+            font-weight: 300 // Light
+
+        .button
+            display: inline-block
+
+// Buttons
+a.button
+.button
+    background transparent
+    border 2px solid cBlack
+    color cBlack
+    font-size 13px
+    font-weight 600
+    letter-spacing 4px
+    margin 40px 0 0
+    padding 13px 60px 10px
+    text-transform uppercase
+    transition .2s
+
+    &:hover
+        background cAccent
+        color cWhite
+        border-color cAccent
+
+    &.reverse
+        background cBlack
+        color cWhite
+
+        &:hover
+            background cAccent
+
+// Wrapper
+.wrapper
+    background cWhite
+    display block
+    left: 0
+    margin 0 auto 2%
+    max-width: 1200px
+    position: fixed
+    right: 0
+    width 96%
+    z-index: 1
+
+// Fade
+.fade
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)
+    bottom: 0
+    content:''
+    height: 200px
+    position: absolute
+    width: 100%
+    z-index: 2
+
+// Content Wrapper
+.content-wrapper
+    background: cWhite
+    display: block
+    left: 0
+    margin: 100vh auto 0
+    max-width: 1200px
+    position: absolute
+    right: 0
+    width 96%
+    z-index: 3
+
+// Header
+header
+    padding 0px 40px 20px
+    text-align center
+    height: 100vh
+
+    img
+        display: block
+        margin: 0 auto
+        max-width: 857px
+        width: 100%
+
+        &.mobile
+            display: none
+
+    svg
+        fill cAccent
+        margin 0
+        width 120px
+
+    h1
+        color cGrayDark
+        font-size 14px
+        letter-spacing 6px
+        line-height 25px
+        margin -20px 0 20px 0
+        text-transform uppercase
+
+    h2
+        font-size 86px
+        font-weight 400 // Regular
+        letter-spacing 2px
+
+// Container
+.container
+    display flex
+    flex-direction row
+    width 100%
+
+// Card
+.card
+    border 2px solid cBlack
+    flex-grow 1
+    margin-bottom -2px
+    padding 80px 100px
+    text-align center
+    width 50%
+
+    &.second
+        margin-left -2px
+
+    &.full
+        width 100%
+
+    &.rsvp
+        border 20px solid cBlack
+        transition: all .3s ease
+
+        &:hover
+            border-color: cAccent
+
+            .button
+                background-color: cAccent
+                border-color: cAccent
+
+    hr
+        background cBlack
+        border 0
+        height 2px
+        margin-bottom 40px
+
+    h3
+        color cBlack
+        font-size 16px
+        letter-spacing 4px
+        margin-bottom 40px
+        text-transform uppercase
+
+    h4
+        color cBlack
+        font-size 14px
+        font-weight: 300 // Light
+        letter-spacing: 3px
+        margin-bottom 40px
+        text-transform uppercase
+
+        &:last-of-type
+            margin-bottom 0
+
+        span
+            display: block
+            font-size: 16px
+            letter-spacing 1px
+            margin-top 15px
+            text-transform none
+            word-spacing 1px
+
+.footer
+    flex-grow 1
+    padding 20px 20px
+
+    p
+        font-size 12px
+        letter-spacing 3px
+        text-align center
+        text-transform uppercase
+
+// TABLET
+@media(max-width:980px)
+    header
+        h2
+            font-size 36px
+
+// MOBILE
+@media(max-width:800px)
+    .wrapper
+        position: relative
+
+    .fade
+        display: none
+
+    header
+        height: auto
+
+        img.desktop
+            display: none
+
+        img.mobile
+            display: block
+            max-width: 300px
+
+    .content-wrapper
+        margin-top: 0
+
+    // Container
+    .container
+        display block
+
+    // Card
+    .card
+        display block
+        margin-bottom 2%
+        padding 80px 40px
+        width 100%
+
+        &.second
+            margin-left 0
